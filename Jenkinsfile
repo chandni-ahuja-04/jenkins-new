@@ -8,7 +8,7 @@ pipeline {
     }
     stage('Upload to S3') {
       steps {
-        sh 'aws s3 cp index.zip s3://chandni-bucket/'
+        sh 'aws s3 cp index.zip s3://chandni-bucket/chandni/'
       }
     }
   }
