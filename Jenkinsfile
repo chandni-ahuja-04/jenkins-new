@@ -15,7 +15,7 @@ pipeline {
     stage('Deploy to Nginx EC2') {
       steps {
         sh '''
-        ssh -i -o StrictHostKeyChecking=no chandni.pem ubuntu@3.83.206.4 << 'EOF'
+        ssh -i /home/ubuntu/.ssh/chandni.pem ubuntu@3.83.206.4 << 'EOF'
           sudo su -
           rm -r chandni index.zip
           aws s3 cp s3://chandni-bucket/chandni/index.zip .
