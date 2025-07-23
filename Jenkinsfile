@@ -19,8 +19,8 @@ pipeline {
           rm -rf chandni/ index.zip
           aws s3 cp s3://chandni-bucket/chandni/index.zip .
           unzip -o index.zip
-          sudo -S mkdir -p /var/www/html/chandni/
-          sudo -S cp chandni/index.html /var/www/html/chandni/
+          mkdir -p /var/www/html/chandni/
+          cp chandni/index.html /var/www/html/chandni/
         '''
       }
     }
