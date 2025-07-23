@@ -16,9 +16,8 @@ pipeline {
       steps {
         sh '''
         ssh -i /var/lib/jenkins/.ssh/chandni.pem ubuntu@3.83.206.4
-          sudo rm -r chandni index.zip
           aws s3 cp s3://chandni-bucket/chandni/index.zip .
-          sudo unzip index.zip
+          unzip index.zip
           sudo cp chandni/index.html /var/www/html/chandni/
         '''
       }
