@@ -15,7 +15,7 @@ pipeline {
     stage('Deploy to Nginx EC2') {
       steps {
         sh '''
-        ssh -i /var/lib/jenkins/.ssh/chandni.pem ubuntu@3.83.206.4
+        ssh -i chandni.pem ubuntu@3.83.206.4
           rm -rf chandni/ index.zip
           aws s3 cp s3://chandni-bucket/chandni/index.zip .
           unzip -o index.zip
